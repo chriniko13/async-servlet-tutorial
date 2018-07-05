@@ -23,7 +23,7 @@ public class AProcessorServlet extends HttpServlet implements ProcessorServlet {
                     increaseStagesCounter(this.getServletContext());
 
                     try {
-                        asyncContext.getResponse().getWriter().write("AProcessorServlet\n");
+                        asyncContext.getResponse().getWriter().write("AProcessorServlet, threadName: " + Thread.currentThread().getName() + "\n");
                     } catch (IOException e) {
                         e.printStackTrace(System.err);
                     }

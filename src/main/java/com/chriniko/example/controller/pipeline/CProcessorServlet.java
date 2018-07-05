@@ -24,7 +24,7 @@ public class CProcessorServlet extends HttpServlet implements ProcessorServlet {
                     increaseStagesCounter(this.getServletContext());
 
                     try {
-                        asyncContext.getResponse().getWriter().write("CProcessorServlet\n");
+                        asyncContext.getResponse().getWriter().write("CProcessorServlet, threadName: " + Thread.currentThread().getName() + "\n");
                         asyncContext.getResponse().getWriter().write("totalStagesInPipeline: "
                                 + this.getServletContext().getAttribute("totalStagesInPipeline")
                                 + "\n");
